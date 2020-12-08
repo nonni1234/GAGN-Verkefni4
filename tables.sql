@@ -13,15 +13,15 @@ create table Landshluti(
 
 create table Sveitarfelag(
 	sveitarfelagsnumer char(4) primary key,
-    nafn varchar(24),
+    nafn varchar(36),
     landshluti int,
     FOREIGN KEY (landshluti) REFERENCES Landshluti(landshluti_id)
 );
 
 create table Fjoldi(
-	ar char(4) primary key,
+	ar char(4),
     sveitarfelag char(4) not null,
-    fjoldi int not null,
+    mannfjoldi int not null,
     jsondata json not null,
     FOREIGN KEY (sveitarfelag) REFERENCES Sveitarfelag(sveitarfelagsnumer) 
 );
